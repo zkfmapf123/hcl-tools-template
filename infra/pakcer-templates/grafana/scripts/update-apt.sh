@@ -2,12 +2,11 @@
 
 set -euf -o pipefail
 
-GRAFANA_VERSION=8.2.0
+# Set default answer for any questions a package might ask
+export DEBIAN_FRONTEND=noninteractive
 
-## Run Grafana automatically with Docker
-docker run \
-  -d \
-  -p 3000:3000 \
-  --restart unless-stopped \
-  --name=grafana \
-  grafana/grafana:$GRAFANA_VERSION
+# Retrieve APT package sources
+apt-get update -qq
+
+# Install the newest versions of all installed packages
+apt-get upgrade -y
