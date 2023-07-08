@@ -33,5 +33,7 @@ do
   echo "working..."
 done
 
+mkdir -p /opt/openvpn
+touch /opt/openvpn/zkfmapf123.ovpn
 ## Generate OpenVPN client configuration file
-docker exec openvpn show-client-config > /opt/openvpn/fastcampus.ovpn
+docker exec openvpn show-client-config > /opt/openvpn/zkfmapf123.ovpn
