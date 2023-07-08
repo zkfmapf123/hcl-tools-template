@@ -1,5 +1,9 @@
 # Terraform + Packer + Ansible
 
+## Architecture
+
+![image](./public/image.png)
+
 ## Folder Architecture
 
 ```
