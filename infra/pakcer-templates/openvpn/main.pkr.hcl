@@ -5,7 +5,7 @@ build {
         "amazon-ebs.ubuntu",
     ]
 
-    ## 클라우드 인스턴스 초기화
+    ## user_data에 기재된 명령어 진행 후 provisioning 진행...
     provisioner "shell" {
         inline = [
             "cloud-init status --wait"
@@ -34,7 +34,6 @@ build {
         scripts = [
             "${path.root}/scripts/update-apt.sh",
             "${path.root}/scripts/install-common-tools.sh",
-            "${path.root}/scripts/configure-locale.sh",
             "${path.root}/scripts/install-docker.sh",
             "${path.root}/scripts/clean-apt.sh",
         ]

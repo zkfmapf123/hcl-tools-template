@@ -18,7 +18,7 @@ locals {
   }
 }
 
-## VPC
+########################################### VPC ###########################################
 resource "aws_vpc" "vpc" {
   cidr_block = "10.0.0.0/16"
 
@@ -134,4 +134,27 @@ output "private_subnets" {
         for subnet in aws_subnet.privates:
             subnet.availability_zone => subnet.id
     }
+}
+
+########################################### EC2 ###########################################
+data "aws_ami" "amis" {
+  most_recent = true
+  owners = ["self"]
+  
+  filter {
+    name = "name"
+    values = ["grafana", "openvpn"]
+  }
+
+  filter {
+    name = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+output v {
+  value = {
+  for i, v in data.aws_ami.amis:
+    i => v
+  }
 }
