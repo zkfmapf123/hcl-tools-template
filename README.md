@@ -18,5 +18,10 @@
 ## Execute
 
 ```
+    // ami 설치
+    cd ifnra/packer-templates/openvpn && packer init . && packer build .
+    cd ifnra/packer-templates/grafana && packer init . && packer build .
 
+    // terraform 구성
+    cd infra && terraform init && terraform apply
 ```
