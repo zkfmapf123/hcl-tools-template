@@ -7,11 +7,12 @@
   - [x] vpc
   - [x] nat gateway
   - [x] subnets
+  - [x] ec2 from read data aws_ami
 
 - Packer
 
-  - [ ] make openvpn ec2 ami
-  - [ ] make grafana ec2 ami
+  - [x] make openvpn ec2 ami
+  - [x] make grafana ec2 ami
 
 - Ansible
 
@@ -54,4 +55,10 @@
   ```
       shell 파일 맨처음 위치한 명령어로써,
       해당 shell파일이 실패했을 경우 바로 종료한다 라는 의미...
+  ```
+
+- openvpn의 run-docker-openvpn.sh은 파일 copy만 하는경우
+  ```
+      open-vpn의 경우 해당 인스턴스의 public_ip가 필요한데,
+      pakcer의 경우 ami를 만들때의 public_ip와 실제 인스턴스가 running 되고난 후의 public_ip가 상이하기 때문에...
   ```
