@@ -1,5 +1,13 @@
 # Terraform + Packer + Ansible
 
+## Folder Architecture
+
+```
+  |- modules  (terraform module)
+  |- template (packer + ansible template)
+  main.tf (main 파일)
+```
+
 ## Todo
 
 - Terraform
